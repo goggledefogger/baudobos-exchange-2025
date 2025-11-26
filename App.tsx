@@ -11,7 +11,7 @@ const TreeIcon = () => (
 );
 
 const SantaHatIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 100 100" className={className} xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 -5 100 105" className={className} xmlns="http://www.w3.org/2000/svg">
     <defs>
       <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
         <feGaussianBlur stdDeviation="1.5" result="blur" />
@@ -22,10 +22,10 @@ const SantaHatIcon = ({ className }: { className?: string }) => (
        {/* Red Body */}
       <path d="M15 85 Q 50 -10 85 85 Z" fill="#DC2626" />
       <path d="M50 10 Q 70 30 85 85" fill="none" stroke="rgba(0,0,0,0.1)" strokeWidth="2" />
-      
+
       {/* White Brim */}
       <path d="M10 85 C 10 75, 90 75, 90 85 C 90 95, 10 95, 10 85" fill="white" filter="url(#glow)" />
-      
+
       {/* White Ball */}
       <circle cx="50" cy="5" r="8" fill="white" filter="url(#glow)" />
     </g>
@@ -43,7 +43,7 @@ const IntroView = ({ onStart }: { onStart: () => void }) => (
       <br/><br/>
       We've consulted the star charts and prepared the definitive list. Whether it’s a rare artifact, a nostalgic deep-cut, or something delightfully unexplainable, get ready for some pure, chaotic giving.
     </p>
-    <button 
+    <button
       onClick={onStart}
       className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 active:scale-95 text-xl font-serif"
     >
@@ -55,7 +55,7 @@ const IntroView = ({ onStart }: { onStart: () => void }) => (
 const PrankView = ({ onFix }: { onFix: () => void }) => (
   <div className="w-full max-w-lg mx-auto p-4 animate-fade-in">
     <div className="bg-slate-800/90 backdrop-blur-md rounded-xl p-6 border-2 border-green-500/30 shadow-2xl relative overflow-hidden">
-      
+
       <div className="text-center mb-6 border-b border-white/10 pb-4">
         <h2 className="text-3xl festive-font text-green-400 mb-2">The Official List</h2>
         <p className="text-gray-400 text-sm italic font-serif">
@@ -75,7 +75,7 @@ const PrankView = ({ onFix }: { onFix: () => void }) => (
                  </span>
                </div>
              </div>
-             
+
              <div className="flex items-center gap-2">
                <span className="text-gray-500 text-xs sm:text-sm italic">
                   is giving a gift to
@@ -89,7 +89,7 @@ const PrankView = ({ onFix }: { onFix: () => void }) => (
       </div>
 
       <div className="text-center animate-pulse">
-         <button 
+         <button
            onClick={onFix}
            className="w-full py-4 bg-yellow-500 hover:bg-yellow-400 text-yellow-900 font-extrabold text-lg rounded-lg shadow-lg transform transition hover:scale-[1.02] active:scale-95 border-b-4 border-yellow-700 font-serif"
          >
@@ -112,7 +112,7 @@ const GlitchView = ({ onFix }: { onFix: () => void }) => (
         (Or it may have been Joel messing up the settings.)
       </p>
     </div>
-    <button 
+    <button
       onClick={onFix}
       className="px-8 py-3 bg-green-600 hover:bg-green-500 text-white text-lg rounded-full font-bold shadow-lg transition-transform hover:scale-105"
     >
@@ -130,9 +130,9 @@ interface RealViewProps {
   onReveal: () => void;
 }
 
-const RealView: React.FC<RealViewProps> = ({ 
-  currentUser, matches, onUserSelect, onBack, 
-  isRevealed, onReveal 
+const RealView: React.FC<RealViewProps> = ({
+  currentUser, matches, onUserSelect, onBack,
+  isRevealed, onReveal
 }) => {
   if (!currentUser) {
     return (
@@ -167,7 +167,7 @@ const RealView: React.FC<RealViewProps> = ({
 
   return (
     <div className="w-full max-w-lg mx-auto p-4 animate-fade-in">
-      <button 
+      <button
         onClick={onBack}
         className="hidden mb-6 flex items-center text-gray-500 hover:text-white transition font-mono text-xs uppercase"
       >
@@ -175,17 +175,17 @@ const RealView: React.FC<RealViewProps> = ({
       </button>
 
       <div className="bg-gradient-to-b from-slate-800 to-slate-900 p-8 rounded-3xl border border-white/10 shadow-2xl text-center relative overflow-visible">
-        
+
         <h3 className="text-xl text-green-200 mb-4 font-serif">Welcome, {currentUser}.</h3>
         <p className="text-xs text-gray-600 mb-4">No spouses or duplicates, just algorithms.</p>
-        
+
         {/* Magic Reveal Section */}
         <div className="relative min-h-[350px] flex justify-center items-end mb-8">
             <style>{`
               @keyframes weird-appear {
-                0% { 
-                  opacity: 0; 
-                  transform: translateY(100px) scale(0) rotate(720deg); 
+                0% {
+                  opacity: 0;
+                  transform: translateY(100px) scale(0) rotate(720deg);
                   filter: blur(10px) hue-rotate(90deg);
                 }
                 60% {
@@ -195,9 +195,9 @@ const RealView: React.FC<RealViewProps> = ({
                 80% {
                    transform: translateY(-20px) scale(0.9) rotate(5deg);
                 }
-                100% { 
-                  opacity: 1; 
-                  transform: translateY(-30px) scale(1) rotate(0deg); 
+                100% {
+                  opacity: 1;
+                  transform: translateY(-30px) scale(1) rotate(0deg);
                 }
               }
               @keyframes floaty {
@@ -222,11 +222,11 @@ const RealView: React.FC<RealViewProps> = ({
                         <div className="relative group">
                             {/* Glow effect */}
                             <div className="absolute inset-0 bg-yellow-500 blur-2xl opacity-20 group-hover:opacity-40 transition duration-500"></div>
-                            
+
                             {/* Card Content */}
                             <div className="relative bg-gradient-to-b from-red-700 to-red-900 text-white px-10 py-8 rounded-2xl shadow-2xl border-4 border-yellow-500/50 flex flex-col items-center">
                                 <span className="text-6xl festive-font font-bold drop-shadow-lg filter">{recipient}</span>
-                                
+
                                 {/* Decor */}
                                 <div className="absolute -top-3 -right-3 text-3xl animate-spin-slow">✨</div>
                                 <div className="absolute -bottom-3 -left-3 text-3xl animate-bounce">🎁</div>
@@ -235,20 +235,20 @@ const RealView: React.FC<RealViewProps> = ({
                     </div>
                 </div>
             </div>
-            
+
             {/* The Hat Button */}
-             <button 
+             <button
               onClick={onReveal}
               disabled={isRevealed}
               className={`z-20 transition-all duration-500 relative ${isRevealed ? 'translate-y-10 scale-95 brightness-50 cursor-default grayscale' : 'hover:scale-105 cursor-pointer hover:-rotate-3'}`}
             >
                <SantaHatIcon className={`w-64 h-64 drop-shadow-2xl transition-transform duration-300 ${isRevealed ? 'scale-y-75' : 'animate-bounce-slow'}`} />
-               
+
                {/* Click prompt */}
                {!isRevealed && (
                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <div className="bg-white/90 backdrop-blur text-red-600 font-bold px-6 py-2 rounded-full shadow-lg whitespace-nowrap animate-pulse border-2 border-red-100 transform hover:scale-110 transition">
-                        Tap for Magic!
+                        Reveal Your Gift Recipient
                     </div>
                  </div>
                )}
@@ -279,10 +279,10 @@ const RealView: React.FC<RealViewProps> = ({
 export default function App() {
   const [matches, setMatches] = useState<MatchMap | null>(null);
   const [isDebugMode, setIsDebugMode] = useState(false);
-  
+
   // Stages: 'intro' -> 'prank' -> 'glitch' -> 'real'
   const [stage, setStage] = useState<'intro' | 'prank' | 'glitch' | 'real'>('intro');
-  
+
   const [currentUser, setCurrentUser] = useState<Person | null>(null);
   const [pendingConfirmation, setPendingConfirmation] = useState<Person | null>(null);
   const [isRevealed, setIsRevealed] = useState(false);
@@ -330,7 +330,7 @@ export default function App() {
     return (
       <div className="fixed bottom-4 right-4 p-4 bg-black/90 border border-red-500 rounded-lg text-xs font-mono z-50 max-w-xs shadow-xl">
         <h3 className="text-red-400 font-bold mb-2 flex justify-between items-center">
-          DEBUG MODE 
+          DEBUG MODE
           <button onClick={refreshMatches} className="ml-2 bg-gray-700 px-2 py-1 rounded hover:bg-gray-600 border border-gray-600">
             Reshuffle
           </button>
@@ -353,7 +353,7 @@ export default function App() {
 
   const ConfirmationModal = () => {
     if (!pendingConfirmation) return null;
-    
+
     return (
       <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4 animate-fade-in backdrop-blur-sm">
         <div className="bg-slate-800 border-2 border-red-500 rounded-2xl max-w-sm w-full p-6 text-center shadow-2xl shadow-red-900/30 transform scale-100 transition-all">
@@ -373,13 +373,13 @@ export default function App() {
             )}
           </p>
           <div className="flex gap-4 justify-center">
-            <button 
+            <button
               onClick={cancelIdentity}
               className="px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-gray-300 transition"
             >
               No, go back
             </button>
-            <button 
+            <button
               onClick={confirmIdentity}
               className="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold transition shadow-lg ring-2 ring-red-900 ring-offset-2 ring-offset-slate-800"
             >
@@ -394,7 +394,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-900 text-white selection:bg-red-500 selection:text-white relative">
       <Snowfall />
-      
+
       {/* Header */}
       <header className="fixed top-0 w-full p-4 z-10 flex justify-between items-center bg-gradient-to-b from-slate-900/90 to-transparent">
         <div className="text-xl festive-font text-red-500 flex items-center gap-2">
@@ -409,7 +409,7 @@ export default function App() {
         {stage === 'prank' && <PrankView onFix={() => setStage('glitch')} />}
         {stage === 'glitch' && <GlitchView onFix={handleFixGlitch} />}
         {stage === 'real' && (
-          <RealView 
+          <RealView
             currentUser={currentUser}
             matches={matches}
             onUserSelect={handleUserSelect}
@@ -419,7 +419,7 @@ export default function App() {
           />
         )}
       </main>
-      
+
       {/* Modals and Overlays */}
       <ConfirmationModal />
       {isDebugMode && renderDebugPanel()}
