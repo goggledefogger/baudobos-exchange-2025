@@ -35,17 +35,17 @@ const SantaHatIcon = ({ className }: { className?: string }) => (
 // --- Sub-components defined outside App to prevent re-renders ---
 
 const IntroView = ({ onStart }: { onStart: () => void }) => (
-  <div className="flex flex-col items-center justify-center min-h-[50vh] animate-fade-in text-center p-6">
-    <div className="text-6xl mb-6 animate-bounce">🎄</div>
-    <h1 className="text-5xl festive-font text-red-500 mb-4 drop-shadow-md">BauDobos Exchange 2025</h1>
-    <p className="text-lg text-gray-300 mb-8 max-w-md font-serif leading-relaxed">
+  <div className="flex flex-col items-center justify-center min-h-[calc(100vh-6rem)] animate-fade-in text-center p-4 sm:p-6">
+    <div className="text-5xl sm:text-6xl mb-4 sm:mb-6 animate-bounce">🎄</div>
+    <h1 className="text-3xl sm:text-5xl festive-font text-red-500 mb-3 sm:mb-4 drop-shadow-md px-2">BauDobos Exchange 2025</h1>
+    <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 max-w-md font-serif leading-relaxed px-2">
       Welcome to the 2025 BauDobos family exchange. The tradition continues!
       <br/><br/>
-      We've consulted the star charts and prepared the definitive list. Whether it’s a rare artifact, a nostalgic deep-cut, or something delightfully unexplainable, get ready for some pure, chaotic giving.
+      We've consulted the star charts and prepared the definitive list. Whether it's a rare artifact, a nostalgic deep-cut, or something delightfully unexplainable, get ready for some pure, chaotic giving.
     </p>
     <button
       onClick={onStart}
-      className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 active:scale-95 text-xl font-serif"
+      className="px-6 sm:px-8 py-3 sm:py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 active:scale-95 text-lg sm:text-xl font-serif"
     >
       Open the List
     </button>
@@ -70,7 +70,7 @@ const PrankView = ({ onFix }: { onFix: () => void }) => (
                <span className={`w-2 h-2 rounded-full flex-shrink-0 ${giver === 'Joel' ? 'bg-amber-500' : 'bg-green-500'}`}></span>
                <span className="text-base sm:text-lg font-semibold text-gray-200 truncate">
                   {giver}
-                  {giver === 'Joel' && <span className="text-[8px] sm:text-[9px] text-amber-500 ml-1.5 sm:ml-2 border border-amber-900/50 bg-amber-900/20 rounded px-1 uppercase tracking-tighter font-bold">WARNING: LAME</span>}
+                  {giver === 'Joel' && <span className="hidden sm:inline text-[9px] text-amber-500 ml-2 border border-amber-900/50 bg-amber-900/20 rounded px-1 uppercase tracking-tighter font-bold">WARNING: LAME</span>}
                </span>
              </div>
 
