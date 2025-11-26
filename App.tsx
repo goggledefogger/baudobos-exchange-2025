@@ -65,22 +65,21 @@ const PrankView = ({ onFix }: { onFix: () => void }) => (
 
       <div className="space-y-3 mb-8">
         {ALL_PEOPLE.map((giver) => (
-          <div key={giver} className="flex items-center justify-between bg-white/5 p-3 rounded-lg border border-white/5 hover:bg-white/10 transition group">
-             <div className="flex items-center gap-3">
-               <span className={`w-2 h-2 rounded-full ${giver === 'Joel' ? 'bg-amber-500' : 'bg-green-500'}`}></span>
-               <div className="flex flex-col">
-                 <span className="text-lg font-semibold text-gray-200">
-                    {giver}
-                    {giver === 'Joel' && <span className="text-[9px] text-amber-500 ml-2 border border-amber-900/50 bg-amber-900/20 rounded px-1 uppercase tracking-tighter font-bold">WARNING: LAME</span>}
-                 </span>
-               </div>
+          <div key={giver} className="flex items-center justify-between gap-2 bg-white/5 p-3 rounded-lg border border-white/5 hover:bg-white/10 transition group">
+             <div className="flex items-center gap-2 min-w-0 flex-1">
+               <span className={`w-2 h-2 rounded-full flex-shrink-0 ${giver === 'Joel' ? 'bg-amber-500' : 'bg-green-500'}`}></span>
+               <span className="text-base sm:text-lg font-semibold text-gray-200 truncate">
+                  {giver}
+                  {giver === 'Joel' && <span className="text-[8px] sm:text-[9px] text-amber-500 ml-1.5 sm:ml-2 border border-amber-900/50 bg-amber-900/20 rounded px-1 uppercase tracking-tighter font-bold">WARNING: LAME</span>}
+               </span>
              </div>
 
-             <div className="flex items-center gap-2">
-               <span className="text-gray-500 text-xs sm:text-sm italic">
+             <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+               <span className="text-gray-500 text-xs italic hidden sm:inline">
                   is giving a gift to
                </span>
-               <span className="text-lg font-bold text-red-400 bg-red-900/30 px-3 py-1 rounded border border-red-500/20">
+               <span className="text-gray-400 text-xs sm:hidden">→</span>
+               <span className="text-base sm:text-lg font-bold text-red-400 bg-red-900/30 px-2 sm:px-3 py-0.5 sm:py-1 rounded border border-red-500/20 whitespace-nowrap">
                  Danny
                </span>
              </div>
