@@ -11,7 +11,7 @@ const TreeIcon = () => (
 );
 
 const SantaHatIcon = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 100 100" className={className} xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 -5 100 105" className={className} xmlns="http://www.w3.org/2000/svg">
     <defs>
       <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
         <feGaussianBlur stdDeviation="1.5" result="blur" />
@@ -247,7 +247,7 @@ const RealView: React.FC<RealViewProps> = ({
                {!isRevealed && (
                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <div className="bg-white/90 backdrop-blur text-red-600 font-bold px-6 py-2 rounded-full shadow-lg whitespace-nowrap animate-pulse border-2 border-red-100 transform hover:scale-110 transition">
-                        Tap for Magic!
+                        Reveal Your Gift Recipient
                     </div>
                  </div>
                )}
